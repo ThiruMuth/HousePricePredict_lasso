@@ -1,2 +1,2 @@
 # HousePricePredict_lasso
-This is an academic project while learning on various linear model. The model is built on lasso with the data available from machinehack house price hackathon challenge
+This is an academic project while learning on various types of linear models. This model is built on lasso with the data available from machinehack house price hackathon challenge. The best possible option may be Random Forest regression as suggested in the hackathon description as the pair plots did not show very strong relationship with the price except for the square feet, that too < 50%
