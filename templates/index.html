@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="./main.css"> -->
+    <style>
+        body {
+            background-color: #bbb157;
+        }
+        h1 {
+            color: rgb(211, 49, 9);
+            text-align: center;
+            font-size: 20px
+        }
+        label {
+            width: 140px;
+            display: inline-block;
+            text-align: right;
+            font-size:14px
+        }
+        input {
+            padding: 6px;
+            font-size: 14px;
+            border-radius: 1px;
+        }
+
+        textarea {
+            padding: 6px;
+            font-size:14px;
+        }
+        select {
+            padding: 6px;
+            font-size:14px;
+    
+        }
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 9px #999;
+            color:white;
+            background-color: brown;
+            }
+        button:hover {background-color: #3e8e41}
+
+        button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style> 
+    <title>Second cloud app</title>
+    <body>
+        <h1>House Price Prediction</h1>
+        <form action="/predict" method="POST">
+            <label for="Posted_by">Posted by</label>
+            <input list="Posted_by" name="Postedby" id="Postedby">
+            <datalist id="Posted_by">
+                <option value="Dealer"></option>
+                <option value="Builder"></option>
+                <option value="Owner"></option>
+            </datalist><br><br> 
+            <label for="RERA">RERA</label>
+            <input type="radio" id="Yes" name="RERA" value= "1">Yes
+            <input type="radio" id="No" name="RERA" value="0">No<br><br>
+            <label for="BHK_NO">BHK No.</label>
+            <input type="number" id="BHK_NO" name="BHK_NO"><br><br>
+            <label for="SQUARE_FT">Square Ft</label>
+            <input type="number" step="0.001" id="SQUARE_FT" name="SQUARE_FT"><br><br>
+            <label for="READY_TO_MOVE">Ready to Move</label>
+            <input type="radio" name="READY_TO_MOVE" value= "1">Yes
+            <input type="radio" name="READY_TO_MOVE" value="0">No<br><br>
+            <label for="LONGTITUDE">Longtitude</label>
+            <input type="number" step="0.01" id="LONGTITUDE" name="LONGTITUDE"><br><br>
+            <label for="LATITUDE">Latitude</label>
+            <input type="number" step="0.01" id="LATITUDE" name="LATITUDE"><br><br>
+            <label for="BHK_RK">BHK OR RK</label>
+            <input type="radio" name="BHK_RK" value="1">BHK
+            <input type="radio" name="BHK_RK" value="0">RK<br>
+            <button type = "submit" name  = "predict">Predict</button>&nbsp;&nbsp;
+            <button type ="reset" name = "reset">Reset</button>
+        </form>
+    </body>
+</head>
+<br>
+<b>The Expected House Price (in lakhs) is  : </b><strong>{{prediction_text}}</strong>
+</html>
